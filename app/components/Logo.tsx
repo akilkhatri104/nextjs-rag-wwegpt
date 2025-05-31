@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import wwe_logo from './assests/wwe_logo.svg'
+import wwe_logo from '../assests/wwe_logo.svg'
 
 const Logo = () => {
     return (
