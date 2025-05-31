@@ -17,16 +17,13 @@ const {
 const ai = new GoogleGenAI({ apiKey: GOOGLE_API_KEY });
 
 const wweData = [
-    // 'https://www.reddit.com/r/WWE/',
-    // "https://en.wikipedia.org/wiki/WWE",
-    // "https://en.wikipedia.org/wiki/List_of_current_champions_in_WWE",
-    // "https://en.wikipedia.org/wiki/WWE_Raw",
-    // "https://en.wikipedia.org/wiki/WWE_SmackDown",
-    // "https://en.wikipedia.org/wiki/WWE_NXT",
-    // "https://en.wikipedia.org/wiki/History_of_WWE",
-    // "https://en.wikipedia.org/wiki/List_of_WWE_pay-per-view_and_livestreaming_supercards",
-    'https://www.reddit.com/r/SquaredCircle/',
-    'https://www.wwe.com/'
+    'https://www.reddit.com/r/WWE',
+    'https://en.wikipedia.org/wiki/2025_in_professional_wrestling',
+    "https://en.wikipedia.org/wiki/WWE",
+    'https://www.wwe.com/',
+    "https://en.wikipedia.org/wiki/List_of_current_champions_in_WWE",
+    "https://en.wikipedia.org/wiki/List_of_WWE_pay-per-view_and_livestreaming_supercards",
+    'https://www.reddit.com/r/SquaredCircle',
 ];
 
 const client = new DataAPIClient(ASTRA_DB_APPLICATION_TOKEN);
@@ -35,7 +32,7 @@ const db = client.db(ASTRA_DB_API_ENDPOINT, {
 });
 
 const splitter = new RecursiveCharacterTextSplitter({
-    chunkSize: 1024,
+    chunkSize: 512,
     chunkOverlap: 100,
 });
 

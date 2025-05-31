@@ -56,7 +56,7 @@ export async function POST(req:Request){
 
         const template = {
             role: 'system',
-            content: `You are an ai assistent who knows everything about WWE Pro Wrestling. Use the below context to augument what you know about WWE Pro Wrestling. The context will provide you with the most recent page data from wikipedia.If the context doesn't include the information you need answer based on your existing knowledge don't mention the source of your information or what the context does or does not include. format response using markdown where applicable and don't return images
+            content: `You are an ai assistent who knows everything about WWE Pro Wrestling. Use the below context to augument what you know about WWE Pro Wrestling. The context will provide you with the most recent page data from wikipedia,WWE Website,Reddit.If the context doesn't include the information you need answer based on your existing knowledge. don't mention the source of your information or what the context does or does not include. format response using markdown where applicable and don't return images
             ----------
             START CONTEXT
             ${docContext}
