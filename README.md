@@ -1,40 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# AI RAG WWE GPT
 
-## Getting Started
+AI RAG WWE GPT is an AI-powered chatbot for WWE Pro Wrestling fans. It uses Retrieval-Augmented Generation (RAG) to provide up-to-date, context-aware answers about WWE by combining the latest information from sources like Wikipedia, WWE.com, and Reddit with a powerful language model (Google Gemini). The backend leverages AstraDB for vector search and Google GenAI for embeddings and chat completion.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Ask anything about WWE Pro Wrestling
+- Uses recent data from Wikipedia, WWE.com, and Reddit
+- Retrieval-Augmented Generation (RAG) for accurate, context-rich answers
+- Powered by Google Gemini and AstraDB
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/akilkhatri104/nextjs-rag-wwegpt
+   cd nextjs-wwegpt
+   ```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+3. **Set up environment variables:**
+   - Copy `.env-sample` to `.env` and fill in your AstraDB and Google API credentials.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **(Optional) Load WWE data into AstraDB:**
+   - Run the data loader script to populate your database:
+     ```bash
+     npm run seed
+     ```
+
+5. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+6. **Open your browser:**
+   - Visit [https://wwegpt.vercel.app/](https://wwegpt.vercel.app/) to use WWE GPT.
+
+## Project Structure
+
+- `app/` - Next.js app and API routes
+- `scripts/loadDb.ts` - Script to scrape and load WWE data into AstraDB
+- `.env-sample` - Example environment variables
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [AstraDB Documentation](https://docs.datastax.com/en/astra/astra-db-vector/)
+- [Google GenAI Documentation](https://ai.google.dev/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The easiest way to deploy your Next.js app is to use [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+See [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
