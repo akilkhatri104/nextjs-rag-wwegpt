@@ -28,7 +28,11 @@ const Home = () => {
 
     return (
         <main>
-            <h2 style={{ fontSize: '16px', color: 'gray' }}>Database may take 2-3 minutes to start due to inactivity</h2>
+            <h2 style={{ fontSize: '16px', color: 'gray' }}>
+                Database may take 2-3 minutes to start due to inactivity. <br />
+                Wait a few minutes after sending message, if no response is received refresh the page and send message again
+            </h2>
+            
             <Logo />
             <section className={noMessages ? "" : "populated"}>
                 {noMessages ? (
